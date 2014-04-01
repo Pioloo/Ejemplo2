@@ -6,7 +6,7 @@
 }
 
    <div class="container">
-            <div class="link2"><span style="font-weight:bold; font-size:1.5em;">Catalogo de Acciones</span><a href="/Acciones/NuevaAccionProcesal" class="ajax_nueva_accion">
+            <div class="link2"><span style="font-weight:bold; font-size:1.5em;">Catalogo de Sub-Etapas</span><a href="/Acciones/NuevaSubEtapa" class="ajax_nueva_accion">
                         <img src="../../Content/Table/Mas.png" width="20px" height ="20px" class="ImgNuevo" title="Nueva Accion"
                             alt="Nueva SubEtapa" /></a></div>
        <div class="link2">Filtrar Por Etapa: @Html.DropDownList("Etapas", Ejemplo.Models.Estaticos.ListaEtapas(), "--Selecciona Una--", new {@style = "width:25%" })</div>
@@ -28,21 +28,10 @@
             $("#EditarAccionProcesal").live('submit',function (e) {
                 e.preventDefault();
             });
-            $('#tabla').load('/Acciones/ListaAccionesT');
 
             $("#Etapas").on('change', function () {
                 ajaxJson("/Acciones/ListaSubEtapasList", { Etapas: $(this).val() }, "SubEtapas", 0, callBackLlenarSelect);
-                var eta = $("#Etapas").val();
-
-                var url = "/Acciones/ListaAccionesT/?" + "Etapa=" + eta;
-                $('#tabla').load(url);
-            });
-            $("#SubEtapas").on('change', function () {
-                var eta = $("#Etapas").val();
-                var sube = $("#SubEtapas").val();
-
-                var url = "/Acciones/ListaAccionesT/?" + "Etapa=" + eta +"&SubEtapa=" + sube;
-                $('#tabla').load(url);
+                var url= "/Acciones/"
             });
 
             $("input#guardar_accion").live('click', function () {

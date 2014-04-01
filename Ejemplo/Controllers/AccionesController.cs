@@ -59,15 +59,24 @@ namespace Ejemplo.Controllers
             return View(chart);
         }
 
-        public ActionResult ListaAcciones(int? Etapa, int? SubEtapa)
+        public ActionResult ListaAcciones()
         {
            // return new PdfActionResult("ListaAcciones2",repo.ListAccionesProcesales(Etapa, SubEtapa));
+            return View();
+        }
+        public ActionResult ListaAccionesT(int? Etapa, int? SubEtapa)
+        {
+            // return new PdfActionResult("ListaAcciones2",repo.ListAccionesProcesales(Etapa, SubEtapa));
             return View(repo.ListAccionesProcesales(Etapa, SubEtapa));
         }
-        public ActionResult ListaSubEtapas(int? Etapa)
+        public ActionResult ListaSubEtapas()
         {
             //var etapas = repo.ListaEtapasDes();
             //ViewData["etapas"] = etapas;
+            return View();
+        }
+        public ActionResult ListaSubEtapasT(int? Etapa)
+        {
             return View(repo.ListaSubEtapas(Etapa));
         }
 

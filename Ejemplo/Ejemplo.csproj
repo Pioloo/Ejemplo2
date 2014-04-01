@@ -691,7 +691,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Master.Master" />
-    <Content Include="Views\Acciones\ListaAcciones.cshtml" />
+    <Content Include="Views\Acciones\ListaAccionesss.cshtml" />
     <Content Include="Views\Acciones\DetallesAccion.cshtml" />
     <Content Include="Views\Acciones\vista.cshtml" />
     <Content Include="Views\Acciones\EditarAccion.cshtml" />
@@ -707,6 +707,9 @@
     <Content Include="Views\Acciones\EditarEtapa.cshtml" />
     <Content Include="Views\Acciones\DetallesSubEtapas.cshtml" />
     <Content Include="Views\Acciones\EditarSubEtapa.cshtml" />
+    <Content Include="Views\Acciones\ListaAcciones.cshtml" />
+    <Content Include="Views\Acciones\ListaAccionesT.cshtml" />
+    <Content Include="Views\Acciones\ListaSubEtapasT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

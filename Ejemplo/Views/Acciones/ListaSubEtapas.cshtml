@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<table id="tableOne" class="yui table table-bordered" width="100%" style="margin: 1% auto;" >
+
    <div class="container">
             <div class="link2"><span style="font-weight:bold; font-size:1.5em;">Catalogo de Sub-Etapas</span><a href="/Acciones/NuevaSubEtapa" class="ajax_nueva_accion">
                         <img src="../../Content/Table/Mas.png" width="20px" height ="20px" class="ImgNuevo" title="Nueva Accion"
@@ -16,66 +16,10 @@
      
 
     @* <div align="right"><a href="/Acciones/PdfAcciones" target="_blank"><img src="~/Images/iconos/pdf.png" width="48px" height="48px"/>Generar PDF</a></div>*@
-    <thead class="cabecera_tabla">
-        <tr>
-@*            <td class="tableHeader" colspan="2">
-                   
-                </td>*@
-            </tr>
-        <tr>
-@*        <th>
-            Sub Etapas
-        </th>*@
-        @*<th>
-            Descripci&oacute;n
-        </th>*@
-        <th>
-            Descripci&oacute;n
-        </th>
-        <th>Fecha de actualización</th>
-        <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-    <tr id="@item.id_AccionProcesal">
-       @*<td>
-            @Html.DisplayFor(modelItem => item.Id_Etapa_Procesal)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Id_SubEtapa_Procesal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Id_Accion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_AccionProcesal)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Usu_Act)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Act)
-        </td>
-        <td>
-            @Html.ActionLink(" ", "EditarSubEtapa", new {  id_Accion=item.id_AccionProcesal},new { @class = "ajax cboxElement fa fa-pencil-square-o"})
-            @Html.ActionLink(" ", "EliminarAccion", new { id_Accion=item.id_AccionProcesal },new { @class = "eliminarAccion fa fa-trash-o"})
-            @Html.ActionLink(" ", "DetallesSubEtapas", new {id_Accion=item.id_AccionProcesal},new { @class = "ajax cboxElement  fa fa-bars"})
-        </td>
-    </tr>
-}
-        </tbody>
-        <tfoot>
-            <tr>
-			<th>Filtrar Por : &nbsp;<input type="text" name="" value="Descripcion" class="search_init"></th>
-            <th><div style="display:none">Filtrar por : &nbsp;<input type="text" name="" value="Descripcion" class="search_init" /></div>
-			</th>
-		</tr>
-        </tfoot>
-</table>
+<div id="tabla">
+
+</div>
+    
 @section scripts {
     <link href="~/Content/css/estilo.css" rel="stylesheet" />
     <link href="~/Content/colorbox/colorbox.css" rel="stylesheet" />
@@ -84,26 +28,16 @@
     <script src="~/Scripts/jquery.dataTables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#EditarAccionProcesal").live('submit', function (e) {
-                e.preventDefault();
+            $('#tabla').load('/Acciones/ListaSubEtapasT');
+
+            $("#Etapas").on('change', function () {
+                //ajaxJson("/Acciones/ListaSubEtapasList", { Etapas: $(this).val() }, "SubEtapas", 0, callBackLlenarSelect);
+                var eta = $("#Etapas").val();
+
+                var url = "/Acciones/ListaSubEtapasT/?" + "Etapa=" + eta;
+                $('#tabla').load(url);
             });
-            $("input#guardar_accion").live('click', function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/Acciones/EditarAccion",
-                    data: $("#EditarAccionProcesal").serialize(),
-                    success: function (result) {
-                        if (result.Exito == false) {
-                            alert(result.Message);
-                        } else {
-                            alert("Se ha actualizado correctamente");
-                            window.open('/Acciones/ListaAcciones', '_self');
-                        }
-                    }, error: function (result) {
-                        alert("Ocurriò un error");
-                    }
-                });
-            }); 
+           
             ConstruirTabla();
             $(".ajax").colorbox();
             $(".ajax_nueva_accion").colorbox();
