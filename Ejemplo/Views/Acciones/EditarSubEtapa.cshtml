@@ -38,23 +38,25 @@
     <script src="~/Scripts/jquery.dataTables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#EditarEtapa").on('submit', function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/Acciones/EditarSubEtapa",
-                    data: $("#EditarEtapa").serialize(),
-                    success: function (result) {
-                        if (result.Exito == false) {
-                            alert(result.Message);
-                        } else {
-                            alert("Se ha actualizado correctamente");
-                            window.open('/Acciones/ListaSubEtapas', '_self');
-                        }
-                    }, error: function (result) {
-                        alert("Ocurriò un error");
-                    }
-                });
-            });
+
+            //$("input#guardar_accion2").on('submit', function () {
+            //    $.ajax({
+            //        type: "POST",
+            //        url: "/Acciones/EditarSubEtapa",
+            //        data: $("#EditarEtapa").serialize(),
+            //        success: function (result) {
+            //            if (result.Exito == false) {
+            //                alert(result.Message);
+            //            } else {
+            //                alert("Se ha actualizado correctamente");
+            //                alert(url);
+            //                window.open('/Acciones/ListaSubEtapas', '_self');
+            //            }
+            //        }, error: function (result) {
+            //            alert("Ocurriò un error");
+            //        }
+            //    });
+            //});
 
         });
     </script>        

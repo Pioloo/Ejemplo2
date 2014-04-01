@@ -169,7 +169,7 @@ namespace Ejemplo.Controllers
             }
         }
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EditarSubEtapa(Ca_AccionesProcesales accion)
+        public ActionResult EditarSubEtapa(Ca_AccionesProcesales accion,string url)
         {
             try
             {
@@ -177,9 +177,9 @@ namespace Ejemplo.Controllers
                 temp.Descripcion = accion.Descripcion;
                 temp.Fecha_Act = DateTime.Now;
                 repo.GuardarCambios();
-
-                return View("ListaSubEtapas");
-                //return Json(new { Exito = true });
+                //Response.Write(url);
+                //return View("ListaSubEtapas");
+                return Json(new { Exito = true });
             }
             catch (Exception ex)
             {

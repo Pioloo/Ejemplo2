@@ -21,13 +21,15 @@
 </div>
     
 @section scripts {
-    <link href="~/Content/css/estilo.css" rel="stylesheet" />
-    <link href="~/Content/colorbox/colorbox.css" rel="stylesheet" />
+<link href="~/Content/colorbox/colorbox.css" rel="stylesheet" />
     <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
     <script src="~/Scripts/jquery.colorbox-min.js"></script>
     <script src="~/Scripts/jquery.dataTables.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            $("#EditarEtapa").live('submit', function (e) {
+                e.preventDefault();
+            });
             $('#tabla').load('/Acciones/ListaSubEtapasT');
 
             $("#Etapas").on('change', function () {
@@ -37,9 +39,46 @@
                 var url = "/Acciones/ListaSubEtapasT/?" + "Etapa=" + eta;
                 $('#tabla').load(url);
             });
-           
+            $("input#guardar_accion2").live('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Acciones/EditarSubEtapa",
+                    data: $("#EditarEtapa").serialize(),
+                    success: function (result) {
+                        if (result.Exito == false) {
+                            alert(result.Message);
+                        } else {
+                            alert("Se ha actualizado correctamente");
+                            actualizar();
+                            
+                            //$.colorbox.close();
+                            //cerrar();
+                        }
+                    }, error: function (result) {
+                        //alert("Ocurriò un error");
+                    }
+                });
+            //    $.ajax({
+
+            //        parent.jQuery.colorbox.close();
+            //    });
+            });
+            function actualizar() {
+                //window.parent.location.reload(true);
+                var eta = $("#Etapas").val();
+
+                var url = "/Acciones/ListaSubEtapasT/?" + "Etapa=" + eta;
+                $('#tabla').load(url);
+                parent.$.fn.colorbox.close();
+                
+            }
+            function cerrar() {
+                $.colorbox.close();
+                //return false;
+
+            }
             ConstruirTabla();
-            $(".ajax").colorbox();
+            $(".ajax").colorbox({ onClosed: function () { location.reload(true); }});
             $(".ajax_nueva_accion").colorbox();
             $('.eliminarAccion').live('click', function (e) {
                 e.preventDefault();

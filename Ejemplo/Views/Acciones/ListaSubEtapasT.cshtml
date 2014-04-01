@@ -78,24 +78,6 @@
                 e.preventDefault();
             });
             
-
-            $("input#guardar_accion").live('click', function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/Acciones/EditarAccion",
-                    data: $("#EditarAccionProcesal").serialize(),
-                    success: function (result) {
-                        if (result.Exito == false) {
-                            alert(result.Message);
-                        } else {
-                            alert("Se ha actualizado correctamente");
-                            window.open('/Acciones/ListaAcciones', '_self');
-                        }
-                    }, error: function (result) {
-                        alert("Ocurriò un error");
-                    }
-                });
-            }); 
             ConstruirTabla();
             $(".ajax").colorbox();
             $(".ajax_nueva_accion").colorbox();
