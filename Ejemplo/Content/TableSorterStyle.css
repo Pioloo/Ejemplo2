@@ -1,0 +1,38 @@
+﻿/* Tablesorter Pager */
+div.tablesorterPager {
+	width:200px;
+	padding: 10px 0 10px 0;
+	text-align: center;
+	margin:auto;
+}
+div.tablesorterPager span {
+	padding: 0 5px 0 5px;
+}
+div.tablesorterPager input.prev {
+	width: auto;
+	margin-right: 10px;
+}
+div.tablesorterPager input.next {
+	width: auto;
+	margin-left: 10px;
+}
+div.tablesorterPager input {
+	width: 50px;
+	border: 1px solid #330000;
+}
+
+.pagedisplay{
+	text-align:center;
+}
+
+i.first,i.prev,
+i.next,i.last{
+	cursor:pointer;
+	font-size: 20px;
+}
+
+i.first:hover,i.prev:hover,
+i.next:hover,i.last:hover{
+	color:#565654;
+}
+/* Fin Tablesorter Pager */	

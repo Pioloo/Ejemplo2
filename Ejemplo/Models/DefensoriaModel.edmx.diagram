@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4f41cac6b0a4457aee950546ca61d11" Name="Diagrama1">
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_AccionesProcesales" Width="2.125" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Causas" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Clasificaciones_Delitos" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_ClasificacionJuzgados" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_ComparecenciaDPJ" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_ComparecenciaDPM" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Delitos" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Domicilios" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Ejercicio" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Entes" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Jueces" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_MP" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_MPAdscrito" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Nacionalidad" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Parentesco" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Partidos_Judiciales" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.ca_Personas" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_PreguntasFrecuentes" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.ca_Roles" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Secretarios_Acuerdo" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Sector" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Sectores_PGJ" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.CA_SituacionJuridicaDPJ" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.CA_SituacionJuridicaDPM" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Tipo_Cierre" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_Tipo_Vialidad" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_TipoCarretera" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_TipoCausa" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_TipoCierre" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ca_TipoSentencia" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.ca_Usuarios" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Acusados" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Acusados_Ofendidos" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.de_Bitacora" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Cierre_Expedientes" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Comentario_Seg_Acciones" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Delitos" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Denunciantes" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Expedientes_AccionesProcesales" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Expedientes_Archivos" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.De_Ofendidos" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Logs" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ma_Expedientes" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.sysdiagrams" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.Ta_Parametros" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vAcusados" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_AccionesProcesales" Width="1.5" PointX="16.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Causas" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Clasificaciones_Delitos" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_ClasificacionJuzgados" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Delitos" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Domicilios" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Jueces" Width="1.5" PointX="6.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Ministerio_Publico" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Parentesco" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Personas" Width="1.5" PointX="20.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Roles" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Secretarios_Acuerdo" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Sectores_PGJ" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Tipo_Cierre" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vCa_Usuarios" Width="1.5" PointX="22.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vDe_Acusados" Width="1.5" PointX="12.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vDe_Bitacora" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vDe_Delito" Width="1.5" PointX="14.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vDe_Denunciantes" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vDe_Ofendidos" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vExpedientes" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vLoginCiudadano" Width="1.5" PointX="8.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vMa_Expedientes" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_DefensoriaOficio_PruebasModel.vSeguimientoProceso" Width="1.5" PointX="4.75" PointY="24.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

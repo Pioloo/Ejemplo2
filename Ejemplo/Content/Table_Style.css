@@ -1,0 +1,260 @@
+﻿/* tables 
+tablesorter-headerRow
+*/
+
+
+
+table.yui 
+{
+    font-family:arial;       
+    border: solid 1px #7f7f7f;
+    /*font-size:small;      */
+	border-collapse:collapse;  
+}
+
+
+
+table.yui td {  
+    padding: 5px;
+    border-right: solid 1px #7f7f7f;
+    }
+
+table
+{
+	  -webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+.ImgNuevo 
+{
+	vertical-align:middle;
+	border:0px;
+}
+
+a
+{
+ text-decoration:none;	
+}
+ 
+.ImgAcc
+{
+	vertical-align:middle;
+	width:15px;
+	height:18px;
+	border:0px;
+}
+
+table.yui .even {
+    background-color: #fff;
+	font-family: "Trebuchet MS";
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+table.yui .odd {
+    background-color: #7dac3a;
+	color: white !important;
+	font-family: "Trebuchet MS";
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+table.yui th
+{
+   /* background: url('sprite.png') repeat-x 0px 0px; */         
+    border: 1px solid #7f7f7f;
+    padding: 5px;
+    height: auto;
+    cursor:pointer;
+    font-family:arial;       
+    border: solid 1px #7f7f7f;
+    font-size:small;      
+	border-collapse:collapse;  
+	text-align: center;
+}
+
+
+
+table.yui th a
+{
+    text-decoration: none;
+    text-align: center;     
+    padding-right: 20px;
+    font-weight:bold;
+    white-space:nowrap;
+    background: url('../Table/bg.gif') no-repeat right 50%;
+}
+
+
+
+table.yui thead .headerSortUp , table.yui thead .headerSortDown 
+{
+   /* background: url('sprite.png') repeat-x 0px -100px;*/
+}
+
+
+
+table.yui .headerSortUp a 
+{   
+    background: url('../Table/asc.gif') no-repeat right 50%;
+}
+
+table.yui .headerSortDown a 
+{    
+    background: url('../Table/desc.gif') no-repeat right 50%;
+}
+
+
+
+table.yui tfoot td
+{    
+    border-top: 1px solid #7f7f7f;
+    background-color:#3F3F3F;
+}
+
+
+
+table.yui thead td
+{
+    vertical-align:middle;
+    background-color:#3F3F3F;
+    border:none;
+	color: white;
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	font-weight: bold;
+}
+
+table.yui thead a
+{
+	color: white;
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	font-weight: bold;
+}
+
+
+
+table.yui thead .tableHeader
+{
+    font-size:small;
+}
+
+
+
+table.yui thead .filter
+{
+    text-align:right;
+}
+
+
+
+table.yui tfoot
+{
+    background-color:#3F3F3F;
+    text-align:center;      
+}
+
+
+
+table.yui .tablesorterPager {
+    padding: 10px 0 10px 0;     
+}
+
+table.yui .tablesorterPager span {
+    padding: 0 5px 0 5px;
+}
+
+table.yui .tablesorterPager input.prev {
+    width: auto;
+    margin-right: 10px;
+}
+
+table.yui .tablesorterPager input.next {
+    width: auto;
+    margin-left: 10px;
+}
+
+table.yui .pagedisplay  
+{
+    width: 30px;
+    border: 0px;    
+    background-color: #3F3F3F;
+    text-align:center;
+    vertical-align:top;
+    color: white;
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	font-weight: bold;
+}
+
+
+
+table.tablesorter {
+	font-family: "Trebuchet MS";
+	/*background-color: #CDCDCD;*/
+	margin:10px 0pt 15px;
+	/*font-size: 8pt;*/
+	width: 100%;
+	text-align: left;
+}
+
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	/*background-color: #e6EEEE;*/
+	border: 1px solid #7f7f7f;
+	font-size: small;
+	/*padding: 4px;*/
+}
+
+
+table.tablesorter thead tr .header {
+	background-image: url(../Table/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+
+table.tablesorter tbody td {
+	/*color: #3D3D3D;*/
+	padding: 4px;
+	background-color: #FFF;
+	/*vertical-align: top;*/
+}
+
+
+table.tablesorter tbody tr.odd td {
+	background-color:#7dac3a;
+}
+
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../Table/asc.gif);
+}
+
+
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../Table/desc.gif);
+}
+
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
+table.PolizaTbl14 td,
+table.PolizaTbl01 td
+{
+	text-align:center;
+}
+
+.ImgBack
+{
+	text-decoration:none;
+	border:0px;
+	margin-top:10px;
+}

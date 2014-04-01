@@ -1,0 +1,51 @@
+﻿@model Ejemplo.Models.Ca_AccionesProcesales
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditarAccion</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <div class="contenedor_otro">
+        <div class="row">
+		    <div class="pedazo_verde row col-md-1 col-sm-1 col-xs-3">&nbsp;</div>	
+		    <div class="pedazo_naranja row col-md-2 col-sm-4 col-xs-4">
+			    <label class="paso_1">MODIFICAR</label>
+			    <label class="paso_1_1">acción procesal</label>
+			    <div class="triangulo hidden-xs">&nbsp;</div>
+		    </div>
+		    <div class="pedazo_verde row col-md-9 col-sm-7 col-xs-5">&nbsp;</div>
+	    </div>
+	    <div class="clearfix">
+		    &nbsp;
+	    </div>
+	    <br/>
+	    <div class="row text-center">
+            <form action="EditarAccion" method="post" id="EditarAccionProcesal" >
+                @Html.HiddenFor(model => model.Id_Accion)
+                @Html.HiddenFor(model => model.id_AccionProcesal)
+                @Html.HiddenFor(model => model.Id_SubEtapa_Procesal)
+                @Html.HiddenFor(model => model.Fecha_Act)
+                @Html.HiddenFor(model => model.Usu_Act)
+            <div class="display-label">
+                    <h4>Descripción:@Html.TextAreaFor(model => model.Descripcion, new { @row = 20,@cols = 40 })</h4> 
+            </div>
+            <div class="display-label">
+                    
+            </div>
+		    <input type="submit" id="guardar_accion" name="guardar_accion" class="btn btn-primary btn-margin" value="Guardar"/>
+                </div>
+		    </form>
+	    </div>
+    </div>
+</body>
+</html>

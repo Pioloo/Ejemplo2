@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Ejemplo.Models.Ca_AccionesProcesales>
+
+@{
+    ViewBag.Title = "ListaEtapas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div style="border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;margin-top:2%;">*@
+<table id="tableOne" class="yui table table-bordered" width="100%" style="margin: 1% auto;" >
+    
+     <span style="font-weight:bold; font-size:1.5em;">Catalogo de Etapas</span><a href="/Acciones/NuevaEtapa" class="ajax_nueva_accion">
+                        <img src="../../Content/Table/Mas.png" width="20px" height ="20px" class="ImgNuevo" title="Nueva Accion"
+                            alt="Nueva Accion Procesal" /></a>
+    @*<div align="right"><a href="/Acciones/PdfAcciones" target="_blank"><img src="~/Images/iconos/pdf.png" width="48px" height="48px"/>Generar PDF</a></div>*@
+    <thead class="cabecera_tabla">
+        <tr>
+            @*<td class="tableHeader" colspan="2">*@
+                   
+                </td>
+            </tr>
+        <tr>
+@*        <th>
+            Sub Etapas
+        </th>*@
+        <th>
+            Descripci&oacute;n
+        </th>
+        <th>Fecha de actualización</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr id="@item.id_AccionProcesal">
+        @*@*<td>
+            @Html.DisplayFor(modelItem => item.Id_Etapa_Procesal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_SubEtapa_Procesal)
+        </td>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.Id_Accion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_AccionProcesal)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Usu_Act)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Act)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "EditarEtapa", new {  id_Accion=item.id_AccionProcesal},new { @class = "ajax cboxElement fa fa-pencil-square-o"})
+            @Html.ActionLink(" ", "EliminarAccion", new { id_Accion=item.id_AccionProcesal },new { @class = "eliminarAccion fa fa-trash-o"})
+            @Html.ActionLink(" ", "DetallesEtapa", new {id_Accion=item.id_AccionProcesal},new { @class = "ajax cboxElement  fa fa-bars"})
+            
+
+        </td>
+    </tr>
+}
+        </tbody>
+        <tfoot>
+            <tr>
+			<th>Filtrar Por : &nbsp;<input type="text" name="" value="Descripcion" class="search_init"></th>
+            <th><div style="display:none">Filtrar por : &nbsp;<input type="text" name="" value="Descripcion" class="search_init" /></div>
+			</th>
+		</tr>
+        </tfoot>
+</table>
+
+@section scripts {
+    <link href="~/Content/colorbox/colorbox.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.colorbox-min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#EditarAccionProcesal").live('submit', function (e) {
+                e.preventDefault();
+            });
+            $("input#guardar_accion").live('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Acciones/EditarAccion",
+                    data: $("#EditarAccionProcesal").serialize(),
+                    success: function (result) {
+                        if (result.Exito == false) {
+                            alert(result.Message);
+                        } else {
+                            alert("Se ha actualizado correctamente");
+                            window.open('/Acciones/ListaAcciones', '_self');
+                        }
+                    }, error: function (result) {
+                        alert("Ocurriò un error");
+                    }
+                });
+            });
+            
+            ConstruirTabla();
+            $(".ajax").colorbox();
+            $(".ajax_nueva_accion").colorbox();
+            $('.eliminarAccion').live('click', function (e) {
+                e.preventDefault();
+                if (confirm("¿Estás seguro de eliminar esta Etapa ?")) {
+                    var url = $(this).attr('href');
+                    $.ajax({
+                        type: 'GET',
+                        url: url,
+                        success: function (data) {
+                            if (data.Exito == true) {
+                                alert("Acción eliminada con éxito");
+                                window.open("/Acciones/ListaEtapas2", "_self");
+                            } else
+                                alert("Error al eliminar la acción");
+                        }, error: function (data) {
+                            alert("No se puede eliminar la acción");
+                        }
+                    });
+                } else
+                    return false;
+            });
+        });
+        function ConstruirTabla() {
+            var table;
+            var asInitVals = new Array();
+            table = $("#tableOne").dataTable({
+                "sPaginationType": "full_numbers",
+                "iDisplayLength": 5,
+                "aLengthMenu": [[5, 10, 15, 20, 25, 50, 100, -1], [5, 10, 15, 20, 25, 50, 100, "Todos"]]
+            });
+            $("tfoot input").keyup(function () {
+                table.fnFilter(this.value, $("tfoot input").index(this));
+            });
+            $("tfoot input").each(function (i) {
+                asInitVals[i] = this.value;
+            });
+            $("tfoot input").focus(function () {
+                if ($("tfoot input").hasClass("search_init")) {
+                    this.className = "";
+                    this.value = "";
+                }
+            });
+            $("tfoot input").blur(function (i) {
+                if (this.value == "") {
+                    this.className = "search_init";
+                    this.value = asInitVals[$("tfoot input").index(this)];
+                }
+            });
+
+        }
+    </script>       
+} 

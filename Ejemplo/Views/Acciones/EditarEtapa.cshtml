@@ -1,0 +1,137 @@
+﻿@model Ejemplo.Models.Ca_AccionesProcesales
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditarEtapa</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    	    <div class="row text-center">
+            <form action="EditarEtapa" method="post" id="EditarEtapa" >
+                @Html.HiddenFor(model => model.Id_Accion)
+                @Html.HiddenFor(model => model.id_AccionProcesal)
+                @Html.HiddenFor(model => model.Id_SubEtapa_Procesal)
+                @Html.HiddenFor(model => model.Id_Etapa_Procesal)
+                @Html.HiddenFor(model => model.Fecha_Act)
+                @Html.HiddenFor(model => model.Usu_Act)
+            <div class="display-label">
+                    <h4>Descripción:@Html.TextAreaFor(model => model.Descripcion, new { @row = 20,@cols = 40 })</h4> 
+            </div>
+            <div class="display-label">
+                    
+            </div>
+		    <input type="submit" id="guardar_accion2" name="guardar_accion" class="btn btn-primary btn-margin" value="Guardar"/>
+                </form></div>
+@section scripts {
+    <link href="~/Content/colorbox/colorbox.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.colorbox-min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#EditarEtapa").on('submit', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Acciones/EditarEtapa",
+                    data: $("#EditarEtapa").serialize(),
+                    success: function (result) {
+                        if (result.Exito == false) {
+                            alert(result.Message);
+                        } else {
+                            alert("Se ha actualizado correctamente");
+                            window.open('/Acciones/ListaAcciones', '_self');
+                        }
+                    }, error: function (result) {
+                        alert("Ocurriò un error");
+                    }
+                });
+            });
+
+        });
+    </script>        
+}
+
+    
+   @* @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+
+    
+        <fieldset>
+            <legend>Ca_AccionesProcesales</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Id_Etapa_Procesal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Id_Etapa_Procesal)
+                @Html.ValidationMessageFor(model => model.Id_Etapa_Procesal)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Id_SubEtapa_Procesal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Id_SubEtapa_Procesal)
+                @Html.ValidationMessageFor(model => model.Id_SubEtapa_Procesal)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Id_Accion)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Id_Accion)
+                @Html.ValidationMessageFor(model => model.Id_Accion)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.id_AccionProcesal)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.id_AccionProcesal)
+                @Html.ValidationMessageFor(model => model.id_AccionProcesal)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Descripcion)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Descripcion)
+                @Html.ValidationMessageFor(model => model.Descripcion)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Usu_Act)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Usu_Act)
+                @Html.ValidationMessageFor(model => model.Usu_Act)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Fecha_Act)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Fecha_Act)
+                @Html.ValidationMessageFor(model => model.Fecha_Act)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }*@
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
