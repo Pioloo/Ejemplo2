@@ -55,13 +55,21 @@
                             alert(result.Message);
                         } else {
                             alert("Se ha actualizado correctamente");
-                            window.open('/Acciones/ListaAcciones','_self');
+                            actualizar();
                         }
                     }, error: function (result) {
                         //alert("Ocurriò un error");
                     }
                 });
             });
+            function actualizar() {
+                var eta = $("#Etapas").val();
+                var sube = $("#SubEtapas").val();
+
+                var url = "/Acciones/ListaAccionesT/?" + "Etapa=" + eta + "&SubEtapa=" + sube;
+                $('#tabla').load(url);
+
+            }
              ConstruirTabla();
             $(".ajax").colorbox();
             $(".ajax_nueva_accion").colorbox();
